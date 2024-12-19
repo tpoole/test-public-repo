@@ -1,13 +1,8 @@
-name: Private
+name: JUCE Private Trigger
+run-name: Trigger JUCE CI
 on: [push]
 jobs:
-  build:
+  trigger:
     if: github.repository == 'juce-framework/JUCE-tmp'
-    runs-on: ubuntu-latest
-    steps:
-      - uses: peter-evans/repository-dispatch@v3
-        with:
-          token: ${{ secrets.ACCESS_TOKEN }}
-          repository: juce-framework/JUCE-utils-tmp
-          event-type: build
+    uses: ./.github/workflows/wot.yml
 

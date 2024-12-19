@@ -1,0 +1,11 @@
+name: wot
+run-name: ${{ github.actor }} is running juce-utils-tmp
+on:
+  workflow_call:
+
+jobs:
+  job-1:
+    runs-on: [self-hosted, macOS]
+    steps:
+       - run: pwd
+

@@ -1,0 +1,10 @@
+name: JUCE Private
+on:
+  workflow_run:
+    workflows: [JUCE Private]
+    types: [completed]
+jobs:
+  build:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    uses: juce-framework/JUCE-utils-tmp/.github/workflows/continuous.yml@main
+

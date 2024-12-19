@@ -1,0 +1,9 @@
+name: Private
+run-name: ${{ github.actor }} is running juce-tmp
+on: [push]
+jobs:
+  run:
+    if: github.repository == 'juce-framework/JUCE-tmp'
+    uses: juce-framework/JUCE-utils-tmp/.github/workflows/continuous.yml@main
+    secrets: inherit
+

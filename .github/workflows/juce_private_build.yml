@@ -1,8 +1,7 @@
 name: JUCE Private Build
 on:
-  workflow_call:
+  workflow_dispatch:
 jobs:
   JUCE-private-build:
-    if: github.repository == 'juce-framework/JUCE-tmp'
     uses: juce-framework/JUCE-utils-tmp/.github/workflows/continuous.yml@main
 

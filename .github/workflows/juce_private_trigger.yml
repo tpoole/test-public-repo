@@ -1,7 +1,9 @@
 name: JUCE Private Trigger
 on: [push]
 jobs:
-  JUCE-private-trigger:
+  Trigger:
     if: github.repository == 'juce-framework/JUCE-tmp'
-    uses: ./.github/workflows/juce_private_build.yml
+    uses: benc-uk/workflow-dispatch@v1
+    with:
+      workflow: JUCE Private Build
 

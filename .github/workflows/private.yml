@@ -1,5 +1,4 @@
 name: Private
-run-name: ${{ github.ref_name }}
 on: [push]
 jobs:
   build:

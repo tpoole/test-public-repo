@@ -1,4 +1,4 @@
-name: JUCE Private
+name: JUCE triggered on private
 on:
   workflow_run:
     workflows: [JUCE Private]

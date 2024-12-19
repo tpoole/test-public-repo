@@ -2,8 +2,13 @@ name: Private
 run-name: ${{ github.actor }} is running juce-tmp
 on: [push]
 jobs:
-  run:
-    if: github.repository == 'juce-framework/JUCE-tmp'
-    uses: juce-framework/JUCE-utils-tmp/.github/workflows/continuous.yml@main
-    secrets: inherit
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - if: github.repository == 'juce-framework/JUCE-tmp'
+        uses: peter-evans/repository-dispatch@v3
+        with:
+          token: ${{ secrets.ACCESS_TOKEN }}
+          repository: juce-framework/JUCE-utils-tmp
+          event-type: build
 

@@ -1,8 +1,7 @@
 name: JUCE Private Trigger
-run-name: Trigger JUCE CI
 on: [push]
 jobs:
-  trigger:
+  JUCE-private-trigger:
     if: github.repository == 'juce-framework/JUCE-tmp'
-    uses: ./.github/workflows/wot.yml
+    uses: ./.github/workflows/juce_private_build.yml
 

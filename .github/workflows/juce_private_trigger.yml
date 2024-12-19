@@ -3,7 +3,8 @@ on: [push]
 jobs:
   trigger:
     if: github.repository == 'juce-framework/JUCE-tmp'
-    uses: benc-uk/workflow-dispatch@v1
+    uses: peter-evans/repository-dispatch@v3
     with:
       workflow: JUCE Private Build
+      event-type: my-event
 

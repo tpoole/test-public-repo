@@ -3,5 +3,5 @@ on: [push]
 jobs:
   JUCE-private-trigger:
     if: github.repository == 'juce-framework/JUCE-tmp'
-    uses: ./.github/workflows/juce_private_build.yml@main
+    uses: ./.github/workflows/juce_private_build.yml
 

@@ -1,12 +1,12 @@
 name: Private
-run-name: ${{ github.actor }} is running juce-tmp
+run-name: ${{ github.ref_name }} ${{ github.actor }} ${{ github.sha }}
 on: [push]
 jobs:
   build:
+    if: github.repository == 'juce-framework/JUCE-tmp'
     runs-on: ubuntu-latest
     steps:
-      - if: github.repository == 'juce-framework/JUCE-tmp'
-        uses: peter-evans/repository-dispatch@v3
+      - uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.ACCESS_TOKEN }}
           repository: juce-framework/JUCE-utils-tmp
